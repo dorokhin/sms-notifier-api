@@ -10,6 +10,10 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+if(process.env.NODE_ENV !== 'production') {
+    app.set('json spaces', 2);
+}
+
 // Routes
 app.use(require('./routes'));
 

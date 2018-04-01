@@ -6,7 +6,7 @@ const SMSGatewayStatus = async (req, res) => {
         const gatewayStatusUrl = 'http://' + process.env.MOBILE_PHONE_IP_ADDR + ':' + process.env.MOBILE_PHONE_PORT + '/v1/device/status';
         try {
             let response = await axios.get(gatewayStatusUrl);
-            if(response.status === 200) {
+            if(response.status === 200) {             
                 res.json(response.data);
             }
             else {

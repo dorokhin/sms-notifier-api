@@ -1,17 +1,7 @@
 const axios = require('axios');
 const validator = require('validator');
 const qs = require('qs');
-
-const checkGatewayAvailability = async () => {
-    const url = 'http://' + process.env.MOBILE_PHONE_IP_ADDR + ':' + process.env.MOBILE_PHONE_PORT;
-    try {
-        let response = await axios.get(url);
-        return response.status === 200;
-    }
-    catch(e) {
-        return false;
-    }
-}
+const checkGatewayAvailability = require('../helpers/checkGatewayAvailability');
 
 const sendSMS = async (req, res) => {
     if(await checkGatewayAvailability()) {

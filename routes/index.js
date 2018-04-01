@@ -1,5 +1,7 @@
-var router = require('express').Router();
+const router = require('express').Router();
+const SMSController = require('../controllers/SMSController');
 
-router.use('/v1', require('./v1'));
+// SMS
+router.post('/sms', SMSController.sendSMS);
 
 module.exports = router;

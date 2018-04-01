@@ -1,0 +1,9 @@
+{
+    "name": "SMS Notifier API",
+    "version": "1.0.0",
+    "description": "API for sending SMS through the \"REST SMS Gateway\" Android application",
+    "template": {
+        "forceLanguage": "en",
+        "withCompare": false
+    }
+}

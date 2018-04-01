@@ -1,0 +1,18 @@
+{
+  "name": "sms-notifier-api",
+  "version": "1.0.0",
+  "description": "REST API for sending SMS notifications securely through \"REST SMS Gateway\" installed on an Android device",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julien Moorat <contact@julienmoorat.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
+}

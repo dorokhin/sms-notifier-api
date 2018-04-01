@@ -20,5 +20,5 @@ This API is meant to be accessible over the Internet whereas the REST SMS Gatewa
 5. Run ```npm start``` to start the server (the use of [PM2](http://pm2.keymetrics.io/) is recommended for production)
 6. Start sending messages !
 
-**The creation of an API documentation is planned**
+**Documentation is available at /docs**
 

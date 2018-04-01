@@ -4,6 +4,7 @@
   "description": "REST API for sending SMS notifications securely through \"REST SMS Gateway\" installed on an Android device",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Julien Moorat <contact@julienmoorat.fr>",

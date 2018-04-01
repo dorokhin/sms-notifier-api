@@ -1,5 +1,5 @@
 const axios = require('axios');
-const checkGatewayAvailability = require('../helpers/checkGatewayAvailability');
+const checkGatewayAvailability = require('../services/checkGatewayAvailability');
 
 const SMSGatewayStatus = async (req, res) => {
     if(await checkGatewayAvailability()) {

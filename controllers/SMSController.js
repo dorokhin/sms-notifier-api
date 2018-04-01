@@ -1,8 +1,8 @@
 const axios = require('axios');
 const validator = require('validator');
 const qs = require('qs');
-const checkGatewayAvailability = require('../helpers/checkGatewayAvailability');
-const SMSLogger = require('../helpers/SMSLogger');
+const checkGatewayAvailability = require('../services/checkGatewayAvailability');
+const SMSLogger = require('../services/SMSLogger');
 
 const sendSMS = async (req, res) => {
     if(await checkGatewayAvailability()) {

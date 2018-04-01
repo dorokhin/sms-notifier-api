@@ -2,6 +2,7 @@ const axios = require('axios');
 const validator = require('validator');
 const qs = require('qs');
 const checkGatewayAvailability = require('../helpers/checkGatewayAvailability');
+const SMSLogger = require('../helpers/SMSLogger');
 
 const sendSMS = async (req, res) => {
     if(await checkGatewayAvailability()) {
@@ -10,25 +11,32 @@ const sendSMS = async (req, res) => {
         if(req.body.phone && req.body.message) {
             
             if(validator.isMobilePhone(req.body.phone, process.env.LOCALE)) {
+                const phone = req.body.phone;
+                const message = validator.trim(req.body.message);
                 try {
                     let response = await axios.post(SMSUrl, qs.stringify({
-                        phone: req.body.phone,
-                        message: validator.trim(req.body.message)
+                        phone: phone,
+                        message: message
                     }));
     
                     if(response.status === 200 && response.data === 'OK') {
                         res.json({message: "Message sent"});
+                        try {
+                            await SMSLogger.log(req.ip, phone, message);
+                        }
+                        catch(e) {
+                            console.error(e);
+                        }
                     }
                     else {
                         res.status(500).json({error: "Unexpected error"});
                     }
-    
-                    console.log(response.statusCode, response.data);
                 }
                 catch(e) {
                     res.status(500).json({
                         error: "Error while sending SMS to SMS Gateway"
                     });
+                    console.error(e);
                 }
             }
             else {

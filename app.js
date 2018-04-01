@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 const app = express();
-const isProduction = process.env.NODE_ENV === 'production';
 
 // Middlewares
 app.use(require('morgan')('dev'));

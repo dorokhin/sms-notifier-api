@@ -6,14 +6,14 @@ REST SMS Gateway is a very cool and simple application exposing a REST API to in
 
 This SMS Notifier API is meant to act as an middleman between your applications and the REST SMS Gateway by giving access only to some endpoints and by adding some security measures like message logging, authorization levels (not implemented yet :) ) and security tokens (not implemented yet :) ).
 
-You are free to expose this API on the Internet or in a VPN to send SMS messages/notifications with other applications and ensure that the SMS REST Gateway stays unreachable from the outside by staying enclosed in a private network.
-
-**In some countries, sending SMS can be very expensive. In this case, SMS Notifier API is not the right solution and some online services could be much more suitable.**
-
 | Available notifier methods | Corresponding gateway methods |
 |-----------------|-------------------------------|
 |`POST /sms` | `POST /v1/sms` |
 |`GET /status` | `GET /v1/device/status` |
+
+You are free to expose this API on the Internet or in a VPN to send SMS messages/notifications with other applications and ensure that the SMS REST Gateway stays unreachable from the outside by staying enclosed in a private network.
+
+**In some countries, sending SMS can be very expensive. In this case, SMS Notifier API is not the right solution and some online services could be much more suitable.**
 
 ## Getting Started
 

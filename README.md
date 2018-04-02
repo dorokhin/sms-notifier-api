@@ -18,12 +18,12 @@ You are free to expose this API on the Internet or in a VPN to send SMS messages
 ## Getting Started
 
 ### Prerequisites
-* A mobile phone (preferably one that you do not intend to use) with a SIM card
+* A mobile phone (preferably one that you do not intend to use) with a SIM card from a cheap operator
 * A computer or server on which you will install the SMS Notifier API
 * A private network in which both of this devices are located
 * An internet access (preferably too :) )
 
-### Lets' go !
+### Let's go !
 
 1. Install ["REST SMS Gateway"](https://play.google.com/store/apps/details?id=com.perfness.smsgateway.rest) on an Android device equipped with a SIM card
 2. Run the application then click the "Start" button, the application then display the IP address and port on which it is listening

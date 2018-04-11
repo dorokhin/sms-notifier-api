@@ -11,7 +11,8 @@ const log = async (ip, phone, message) => {
     let fd;
     try {
         fd = await fs.openAsync(process.env.SMS_LOG_PATH || 'sms.log', 'a+');
-        let logLine = new Date().toLocaleString() + ' - ' + ip + ' - ' + phone + ' - ' + message.replace('\n', ' ') + '\r\n';
+        let now = new Date();
+        let logLine = now.toDateString() + ' ' + now.toLocaleTimeString() + ' - ' + ip + ' - ' + phone + ' - ' + message.replace('\n', ' ') + '\r\n';
         await fs.writeAsync(fd, logLine, null, 'utf8');
         await fs.closeAsync(fd);
     }
